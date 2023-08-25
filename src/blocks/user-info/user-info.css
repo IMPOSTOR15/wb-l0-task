@@ -26,7 +26,6 @@
         display: flex;
         flex-direction: column;
         width: auto;
-        gap: 27px;
-        /* gap: 14.0625vw; */
+        gap: 8.4375vw;
     }
 }
