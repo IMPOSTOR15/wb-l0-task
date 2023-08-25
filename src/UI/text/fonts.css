@@ -128,6 +128,9 @@
     .text_normal, .text_normal_bold {
         font-size: 1.5625vw;
     }
+    .text__body_semibold {
+        font-size: 1.5625vw;
+    }
 
     .text_lead {
         font-size: 1.953125vw;
@@ -170,7 +173,9 @@
     .text_caption {
         font-size: 4vw;
     }
-    
+    .text__body_semibold {
+        font-size: 5vw;
+    }
     .text_normal,
     .text_normal_bold {
         font-size: 5vw;
