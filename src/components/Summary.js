@@ -38,7 +38,7 @@ export default class Summary {
         this.summaryFullValue.appendChild(this.tikerSpanSmall.cloneNode(true))
 
         if (this.isOnlinePayment) {
-            this.orderBtn.textContent = 'Оплатить ' + this._formatePrice(this.finalPrice);
+            this.orderBtn.textContent = 'Оплатить ' + this._formatePrice(this.finalPrice) + ' сом';
         }
     }
 
@@ -50,7 +50,7 @@ export default class Summary {
         } else {
             this.onlinePaymentBtnDescription.style.display = 'inline'
         }
-        this.orderBtn.textContent = this.isOnlinePayment ? ('Оплатить ' + this._formatePrice(this.finalPrice)) : 'Заказать';
+        this.orderBtn.textContent = this.isOnlinePayment ? ('Оплатить ' + this._formatePrice(this.finalPrice) + ' сом') : 'Заказать';
     }
 
     setEventListeners() {
