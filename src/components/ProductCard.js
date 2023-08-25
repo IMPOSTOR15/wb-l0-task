@@ -181,13 +181,13 @@ export default class ProductCard {
     }
     
     _updatePrice() {
-        this._actualPrice.textContent = Math.floor(this.actualPrice * this.currentGoodData.quantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        this._actualPrice.textContent = Math.floor(this.actualPrice * this.currentGoodData.quantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "\u202F");
         this._actualPrice.appendChild(this.tikerSpan.cloneNode(true));
-        this._fullPrice.textContent =  Math.floor(this.fullPrice * this.currentGoodData.quantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")  + ' сом'
-
-        this._actualPriceMobile.textContent = Math.floor(this.actualPrice * this.quantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        this._fullPrice.textContent =  Math.floor(this.fullPrice * this.currentGoodData.quantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "\u202F")  + ' сом'
+        console.log(Math.floor(this.actualPrice * this.currentGoodData.quantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "\u202F"));
+        this._actualPriceMobile.textContent = Math.floor(this.actualPrice * this.currentGoodData.quantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "\u202F");
         this._actualPriceMobile.appendChild(this.tikerSpan.cloneNode(true));
-        this._fullPriceMobile.textContent =  Math.floor(this.fullPrice * this.quantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")  + ' сом'
+        this._fullPriceMobile.textContent =  Math.floor(this.fullPrice * this.currentGoodData.quantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "\u202f")  + ' сом'
     };
     _checkQuantity() {
         if (this.currentGoodData.quantity === this.currentGoodData.quantityRemains) {

@@ -57,8 +57,8 @@ export default class InputValidator {
 
     updateErrorState(inputInfo) {
         if (!inputInfo.isValid) {
-            if (inputInfo.inputElement.value.trim() === "") {
-                this.showError(inputInfo.inputElement, inputInfo.errorElement, inputInfo.errorMessageEmpty);
+            if (!inputInfo.inputElement.value.trim() === "") {
+                // this.showError(inputInfo.inputElement, inputInfo.errorElement, inputInfo.errorMessageEmpty);
             } else {
                 this.showError(inputInfo.inputElement, inputInfo.errorElement, inputInfo.errorMessageInvalid);
             }
@@ -70,6 +70,9 @@ export default class InputValidator {
             if (inputInfo.descriptionElement) {
                 this.showDescription(inputInfo)
             }
+        }
+        if (inputInfo.inputElement.value.trim() === "") {
+            this.hideError(inputInfo.inputElement, inputInfo.errorElement);
         }
         
     }
@@ -112,16 +115,16 @@ export default class InputValidator {
     }
   
     validateAllInputs() {
-      let isValid = true;
-        
-      for (const input of this.inputs) {
-        if (!input.isValid) {
-          this.showError(input.inputElement, input.errorElement, input.errorMessageInvalid);
-          isValid = false;
+        for (const input of this.inputs) {
+            if (!input.isValid) {
+                input.inputElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                this.showError(input.inputElement, input.errorElement, input.errorMessageInvalid);
+                
+                if (input.descriptionElement) {
+                    this.hideDescription(input)
+                }
+            }
         }
-      }
-  
-      return isValid;
     }
   }
   

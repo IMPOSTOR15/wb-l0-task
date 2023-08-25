@@ -312,9 +312,7 @@ paymentData.forEach((paymentCard) => {
 })
 
 const courierDeliveryAdressesColumn = document.querySelector('#courierDeliveryAdressesColumn')
-// console.log(courierDeliveryAdressesColumn);
 const pointDeliveryAdressesColumn = document.querySelector('#pointDeliveryAdressesColumn');
-// console.log(pointDeliveryAdressesColumn);
 const deliveryElements = []
 
 function createAdressItem (adressData) {
