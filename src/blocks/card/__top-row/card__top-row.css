@@ -1,0 +1,22 @@
+.card__top-row {
+    display: flex;
+    gap: 10px;
+    height: 32px;
+    /* margin: 0 0 16px 0; */
+}
+
+@media screen and (max-width: 1023px) {
+    .card__top-row {
+        gap: 0.9766vw;
+        height: 3.125vw;
+        /* margin-bottom: 1.5625vw; */
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .card__top-row {
+        gap: 3.125vw;
+        height: 8.75vw;
+        margin: 0 0 -2.5vw 0;
+    }
+}

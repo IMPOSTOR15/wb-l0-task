@@ -1,0 +1,37 @@
+.header__title {
+    width: 106px;
+    margin: 0 0 10px 0;
+    color: var(--system-white, #FFF);
+    font-family: Segoe UI;
+    font-size: 29px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    font-variant: all-small-caps;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+}
+.header__title_mobile {
+    /* width: 190px; */
+    margin: 0;
+    color: var(--system-white, #FFF);
+    font-family: Segoe UI;
+    font-size: 8.38vw;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 7.5vw;
+    font-variant: all-small-caps;
+    text-transform: uppercase;
+    letter-spacing: 0.8vw;
+    padding: 3.4375vw 1.25vw 6.5625vw 1.25vw;
+    white-space: nowrap;
+}
+@media screen and (max-width: 1023px) {
+    .header__title {
+        width: 10.3516vw;
+        margin-bottom: 0.9766vw;
+        font-size: 2.832vw;
+        line-height: 2.3438vmin; /* 24px */
+        letter-spacing: 0.2344vmin; /* 2.4px / 10.24 */
+    }
+}

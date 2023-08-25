@@ -1,0 +1,22 @@
+.product-quantity__icons-row {
+    display: flex;
+    justify-content: right;
+    margin: 2px -1px 0 0;
+    gap: 16px;
+}
+
+@media screen and (max-width: 1023px) {
+    .product-quantity__icons-row {
+        justify-content: flex-end;
+        margin: 0.0977vw -0.0977vw 0 0;
+        gap: 1.5625vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .product-quantity__icons-row {
+        justify-content: flex-start;
+        margin: 0 3.75vw;
+        gap: 7.5vw;
+    }
+}

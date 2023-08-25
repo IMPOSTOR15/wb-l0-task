@@ -1,0 +1,8 @@
+.product-discription__property-text {
+    margin: 0;
+    color: var(--text-black, #000);
+}
+
+.product-discription__property-text_outofstock {
+    color: var(--system-gray, #9797AF);
+}

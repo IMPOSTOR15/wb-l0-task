@@ -1,0 +1,24 @@
+.delivery-type__title {
+    margin: 0;
+    color: var(--text-black, #000);
+    font-family: Segoe UI;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.23077;
+    margin-bottom: 12px;
+}
+
+@media screen and (max-width: 1023px) {
+    .delivery-type__title {
+        font-size: 1.26953125vw;
+        margin-bottom: 1.171875vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .delivery-type__title {
+        margin-bottom: 3.75vw;
+        font-size: 4.0625vw;
+    }
+}

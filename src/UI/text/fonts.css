@@ -1,0 +1,208 @@
+/* Сайт/body */
+.text__body {
+    font-family: Segoe UI;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.text__body-2 {
+    font-family: Segoe UI;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.42857;
+}
+
+.text__body_semibold {
+    font-family: Segoe UI;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* Сайт/caption */
+.text_caption {
+    font-family: Segoe UI;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.23077;
+}
+
+/* Сайт/текст */
+.text_normal {
+    font-family: Segoe UI;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.text_normal_bold {
+    font-family: Segoe UI;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.5; 
+}
+
+.text_lead {
+    font-family: Segoe UI;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+}
+
+.text_mainheader {
+    font-family: Segoe UI;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 0.85714;
+    font-variant: all-small-caps;
+    letter-spacing: 0.56px;
+}
+
+/* Сайт/H1 */
+.text_header1 {
+    font-family: Segoe UI;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.28571;
+    letter-spacing: -0.28px;
+}
+
+/* Сайт/H2 */
+.text_header2 {
+    font-family: Segoe UI;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.33333;
+    letter-spacing: -0.24px;
+}
+
+/* Сайт/H3 */
+.text_header3 {
+    font-family: Segoe UI;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.2px;
+}
+
+/* Сайт/H4 */
+.text_header4 {
+    font-family: Segoe UI;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.5;
+}
+/* Сайт/H5 */
+.text_header5 {
+    font-family: Segoe UI;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.23077;
+}
+
+
+@media screen and (max-width: 1023px) { 
+    .text__body {
+        font-size: 1.5625vw;
+    }
+
+    .text_caption {
+        font-size: 1.26953125vw;
+    }
+
+    .text_normal, .text_normal_bold {
+        font-size: 1.5625vw;
+    }
+
+    .text_lead {
+        font-size: 1.953125vw;
+    }
+
+    .text_mainheader {
+        font-size: 2.734375vw;
+    }
+
+    .text_header1 {
+        font-size: 2.734375vw;
+    }
+
+    .text_header2 {
+        font-size: 2.34375vw;
+    }
+
+    .text_header3 {
+        font-size: 1.953125vw;
+    }
+
+    .text_header4 {
+        font-size: 1.5625vw;
+    }
+    .text_header5 {
+        font-size: 1.2695vw;
+    }
+
+}
+
+@media screen and (max-width: 767px) { 
+    .text__body {
+        font-size: 5vw;
+    }
+
+    .text__body-2 {
+        font-size: 4.375vw;
+    }
+    
+    .text_caption {
+        font-size: 4vw;
+    }
+    
+    .text_normal,
+    .text_normal_bold {
+        font-size: 5vw;
+    }
+    
+    .text_lead {
+        font-size: 6.25vw;
+
+    }
+    
+    .text_mainheader {
+        font-size: 8.75vw;
+    }
+    
+    .text_header1 {
+        font-size: 6.25vw;
+
+    }
+    
+    .text_header2 {
+        font-size: 7.5vw;
+    }
+    
+    .text_header3 {
+        font-size: 6.25vw;
+    }
+    
+    .text_header4 {
+        font-size: 4.88vw;
+    }
+    .text_header5 {
+        font-size: 4.0625vw;
+    }
+    
+}

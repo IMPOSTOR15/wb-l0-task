@@ -1,0 +1,31 @@
+.product-discription {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 0 0;
+    max-width: 275px;
+    padding-top: 3px;
+}
+
+.product-discription_outofstok {
+    max-width: 309px;
+}
+
+@media screen and (max-width: 1023px) {
+    .product-discription {
+        max-width: 26.8555vw;
+        padding-top: 0.2929vw;
+        margin-right: auto;
+    }
+
+    .product-discription_outofstok {
+        max-width: 30.1758vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .product-discription,
+    .product-discription_outofstok {
+        max-width: fit-content;
+        gap: 2.5vw;
+    }
+}

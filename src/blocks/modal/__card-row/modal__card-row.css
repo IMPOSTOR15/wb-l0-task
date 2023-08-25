@@ -1,0 +1,15 @@
+.modal__card-row {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+@media screen and (max-width: 1023px) {
+    .modal__card-row {
+        gap: 1.5625vw;
+    }
+}
+@media screen and (max-width: 767px) {
+    .modal__card-row {
+        gap: 5vw;
+    }
+}

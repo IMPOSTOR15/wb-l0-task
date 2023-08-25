@@ -1,0 +1,33 @@
+.search__button {
+    width: 24px;
+    height: 24px;
+    margin: 2px 0 -2px 0;
+    padding: 0;
+    background-image: url(../../../../PUBLIC/icons/header_icons/search.svg);
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.search__button_mobile {
+    width: 8.75vw;
+    height: 8.75vw;
+    background-image: url(../../../../PUBLIC/icons/header_icons/search_mobile.svg);
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1023px) {
+    .search__button {
+        width: 2.34375vw;
+        height: 2.34375vw;
+        margin: 0.1953125vw 0 -0.1953125vw 0;
+        background-size: 2.34375vw;
+    }
+}

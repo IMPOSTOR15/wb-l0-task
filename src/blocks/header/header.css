@@ -1,0 +1,31 @@
+.header {
+    display: flex;
+    padding: 16px 0 16px 0;
+    width: calc(100%-24px);
+    padding-left: 24px;
+    align-items: center;
+    height: 56px;
+}
+.header_mobile {
+    display: none;
+    gap: 4.9vw;
+    margin: 0 4.0625vw;
+    align-items: center;
+}
+
+@media screen and (max-width: 1023px) {
+    .header {
+        padding: 1.5625vw 0 1.5625vw 2.34375vw;
+        width: calc(100% - 2.34375vw);
+        height: 5.4688vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .header {
+        display: none;
+    }
+    .header_mobile {
+        display: flex;
+    }
+}

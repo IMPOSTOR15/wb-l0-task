@@ -1,0 +1,11 @@
+.tab-bar__button {
+    position: relative;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    border: none;
+    height: 8.75vw;
+    width: 8.75vw;
+    padding: 0;
+}

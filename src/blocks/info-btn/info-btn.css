@@ -1,0 +1,25 @@
+.info-btn {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 0;
+    padding: 0;
+    background-image: url(../../../PUBLIC/icons/cart_icons/info.svg);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1023px) {
+    .info-btn {
+        width: 1.9531vw;
+        height: 1.9531vw;
+        background-size: 1.9531vw 1.9531vw;
+    }
+}
+
+.info-btn:hover .tooltip {
+    display: flex;
+}
+  

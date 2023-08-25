@@ -1,0 +1,11 @@
+.header__menu {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+@media screen and (max-width: 1023px) {
+    .header__menu {
+        gap: 1.5625vw;
+    }
+}

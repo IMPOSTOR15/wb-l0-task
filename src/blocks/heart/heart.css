@@ -1,0 +1,32 @@
+.heart {
+    width: 20px;
+    height: 20px;
+    border: 0;
+    padding: 0;
+    background-image: url(../../../PUBLIC/icons/cart_icons/heart.svg);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: background-image 0.3s ease-in-out;
+}
+
+.heart:hover {
+    background-image: url(../../../PUBLIC/icons/cart_icons/heart_active.svg);
+}
+
+@media screen and (max-width: 1023px) {
+    .heart {
+        width: 2.1484vw; /* 22px / 10.24 */
+        height: 2.1484vw;
+        background-size: 2.1484vw 2.1484vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .heart {
+        width: 6.25vw;
+        height: 6.25vw;
+        background-size: 6.25vw 6.25vw;
+    }
+}

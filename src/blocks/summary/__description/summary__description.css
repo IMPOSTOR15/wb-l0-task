@@ -1,0 +1,33 @@
+.summary__description {
+    margin: 4px 0 0 0;
+    color: var(--text-black, #000);
+
+}
+
+.summary__description_marked {
+    width: fit-content;
+    margin: 4px 0 0 0;
+    color: var(--system-magenta, #CB11AB);
+
+    line-height: 1.23077;
+    border-bottom: 1px dashed rgba(203, 17, 171, 0.20);
+}
+
+@media screen and (max-width: 1023px) {
+    .summary__description,
+    .summary__description_marked {
+        margin: 0.390625vw 0 0 0;
+
+    }
+
+    .summary__description_marked {
+        border-bottom: 0.09765625vw dashed rgba(203, 17, 171, 0.20);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .summary__description,
+    .summary__description_marked {
+        display: none;
+    }
+}

@@ -1,0 +1,24 @@
+.product-card {
+    display: flex;
+    padding-top: 9px;
+}
+
+@media screen and (max-width: 1023px) {
+    .product-card {
+        padding-top: 0.8789vw;
+    }
+}
+.product-card_mobile {
+    display: none;
+    border-top: 0.3125vw solid var(--rulers-rulers, rgba(0, 0, 0, 0.10));
+    padding-top: 3.75vw;
+    flex-direction: column;
+}
+@media screen and (max-width: 767px) {
+    .product-card_mobile {
+        display: flex;
+    }
+    .product-card {
+        display: none;
+    }
+}

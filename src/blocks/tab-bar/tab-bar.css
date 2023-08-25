@@ -1,0 +1,16 @@
+.tab-bar {
+    position: fixed;
+    bottom: 0;
+    display: none;
+    justify-content: space-between;
+    padding: 4.375vw 4.0625vw;
+    background: var(--background-white, #FFF);
+    /* width: 91.88vw; */
+    width: calc(100% - 8.125vw);
+}
+
+@media screen and (max-width: 767px) {
+    .tab-bar {
+        display: flex;
+    }
+}

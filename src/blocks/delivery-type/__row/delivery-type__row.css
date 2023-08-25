@@ -1,0 +1,20 @@
+.delivery-type__row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 13px 0 11px 0;
+}
+
+@media screen and (max-width: 1023px) {
+    .delivery-type__row {
+        gap: 0.78125vw;
+        margin: 1.26953125vw 0 1.07421875vw 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .delivery-type__row {
+        gap: 2.5vw;
+        margin: 4.0625vw 0 3.4375vw 0;
+    }
+}

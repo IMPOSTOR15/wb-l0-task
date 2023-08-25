@@ -1,0 +1,26 @@
+.user-info__input-label {
+    position: absolute;
+    top: -18px;
+    opacity: 0;
+    color: var(--system-gray, #9797AF);
+    transition: opacity 0.3s ease;
+}
+
+
+.user-info__input-field:focus + .user-info__input-label, .user-info__input-field:not(:placeholder-shown) + .user-info__input-label {
+    opacity: 1;
+}
+
+@media screen and (max-width: 1023px) {
+    .user-info__input-label {
+        top: -1.76484375vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .user-info__input-label {
+        top: -5.3125vw;
+    }
+}
+
+

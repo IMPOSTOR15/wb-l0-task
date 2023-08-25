@@ -1,0 +1,12 @@
+.product-card__size {
+    position: absolute;
+    left: 1.25vw;
+    bottom: 1.25vw;
+    border-radius: 1.875vw;
+    text-align: center;
+    background: var(--light-system-white, #FFF);
+
+    line-height: 1.42857;
+    padding: 0.3vw 1.08vw 0 1.08vw;
+    filter: none;
+}

@@ -1,0 +1,19 @@
+.card__info-row {
+    display: flex;
+    gap: 32px;
+    margin: 0 0 16px 0;
+}
+
+@media screen and (max-width: 1023px) {
+    .card__info-row {
+        gap: 3.125vw;
+        margin-bottom: 1.5625vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .card__info-row {
+        gap: 3.125vw;
+        margin-bottom: 1.5625vw;
+    }
+}

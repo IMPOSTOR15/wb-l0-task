@@ -1,0 +1,29 @@
+.checkbox {
+    width: 22px;
+    height: 22px;
+    border: 0;
+    padding: 0;
+    background-image: url(../../../PUBLIC/icons/cart_icons/checkbox_disabled.svg);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.checkbox_active {
+    background-image: url(../../../PUBLIC/icons/cart_icons/checkbox_active.svg);
+}
+
+@media screen and (max-width: 1023px) { 
+    .checkbox {
+        width: 2.1484375vw;
+        height: 2.1484375vw;
+    }
+}
+
+@media screen and (max-width: 767px) { 
+    .checkbox {
+        width: 6.875vw;
+        height: 6.875vw;
+    }
+}

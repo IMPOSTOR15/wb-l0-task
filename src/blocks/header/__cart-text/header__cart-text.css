@@ -1,0 +1,16 @@
+.header__cart-text {
+    color: var(--system-white, #FFF);
+    font-family: Segoe UI;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.23077;
+    padding: 0 2.5px;
+}
+
+@media screen and (max-width: 1023px) {
+    .header__cart-text {
+        font-size: 1.2695vw;
+        padding: 0 0.2441vw;
+    }
+}

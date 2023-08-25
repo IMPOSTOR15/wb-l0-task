@@ -1,0 +1,5 @@
+.product-card__info-column {
+    display: flex;
+    padding-top: 0;
+    flex-direction: column;
+}

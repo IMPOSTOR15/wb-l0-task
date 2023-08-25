@@ -1,0 +1,18 @@
+.summary__text {
+    margin: 0;
+    color: var(--text-black, #000);
+
+}
+
+@media screen and (max-width: 1023px) {
+    .summary__text {
+        font-size: 1.5625vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .summary__text {
+        font-size: 5vw;
+    }
+}
+

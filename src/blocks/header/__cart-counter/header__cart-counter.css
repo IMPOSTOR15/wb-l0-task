@@ -1,0 +1,27 @@
+.header__cart-counter {
+    position: absolute;
+    top: -5.5px;
+    right: 8px;
+    height: 16px;
+    width: 16px;
+    transform: rotate(0.074deg);
+    border-radius: 50%;
+    background: var(--system-orange, #F55123);
+    color: var(--system-white, #FFF);
+    text-align: center;
+    font-family: Segoe UI;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px; /* 180% */
+}
+
+@media screen and (max-width: 1023px) {
+    .header__cart-counter {
+        top: -0.5361vw;
+        right: 0.7813vw;
+        height: 1.5625vw;
+        width: 1.5625vw;
+        line-height: 1;
+    }
+}

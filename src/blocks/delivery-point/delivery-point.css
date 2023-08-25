@@ -1,0 +1,11 @@
+.delivery-point {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+@media screen and (max-width: 1023px) {
+    .delivery-point {
+        gap: 0.3906vw;
+    }
+}

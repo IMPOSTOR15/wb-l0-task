@@ -1,0 +1,16 @@
+.product-price__tiker {
+    text-align: right;
+    margin: 0 0 0 5px;
+}
+
+@media screen and (max-width: 1023px) {
+    .product-price__tiker {
+        margin: 0 0 0 0.48828125vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .product-price__tiker {
+        margin: 0 0 0 1.5625vw;
+    }
+}

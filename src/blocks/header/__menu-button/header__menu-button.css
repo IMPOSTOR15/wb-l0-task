@@ -1,0 +1,42 @@
+.header__menu-button {
+    width: 48px;
+    height: 48px;
+    background: transparent;
+    display: flex;
+    padding: 12px 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    background-image: url('../../../../PUBLIC/icons/header_icons/menu.svg');
+    background-size: 28px 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1023px) {
+    .header__menu-button {
+        width: 4.6875vw;
+        height: 4.6875vw;
+        padding: 1.1719vw 0.9766vw;
+        border-radius: 0.7813vw;
+        border: 0.0977vw solid rgba(255, 255, 255, 0.45);
+        background-size: 2.7344vw 2.3438vw;
+        background-position: center;
+    }
+}
+
+.header__menu-button_mobile {
+    padding: 0;
+    background: transparent;
+    border: none;
+    background-image: url('../../../../PUBLIC/icons/header_icons/menu_mobile.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    width: 8.75vw;
+    height: 8.75vw;
+    cursor: pointer;
+}
+

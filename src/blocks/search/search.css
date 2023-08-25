@@ -1,0 +1,18 @@
+.search {
+    display: flex;
+    max-width: 930px;
+    padding: 10px 20px 14px 20px;
+    margin: 0 32px;
+    align-items: center;
+    flex: 1;
+    border-radius: 36px;
+    background: rgba(255, 255, 255, 0.20);
+}
+
+@media screen and (max-width: 1023px) {
+    .search {
+        padding: 0.9765625vw 1.953125vw 1.3671875vw 1.953125vw;
+        margin: 0 3.125vw;
+        border-radius: 3.515625vw;
+    }
+}

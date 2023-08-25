@@ -1,0 +1,32 @@
+.card {
+    display: flex;
+    padding: 16px 24px 24px 24px;
+    flex-direction: column;
+    margin: 3px 0 13px 0;
+    border-radius: 16px;
+    background: var(--background-white, #FFF);
+    gap: 16px;
+}
+
+@media screen and (max-width: 1023px) {
+    .card {
+        padding: 1.5625vw 2.34375vw 3.125vw 2.34375vw;
+        margin: 0.2953vw 0 1.3594vw 0;
+        border-radius: 1.5625vw;
+        gap: 1.5625vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .card:nth-child(1) {
+        margin-top: 5.625vw;
+    }
+    .card {
+        width: 100%;
+        padding: 5vw 5vw 7.5vw 5vw;
+        margin: 3.75vw -5vw 0 -5vw;
+        border-radius: 5vw;
+        gap: 5vw;
+        max-width: 90vw;
+    }
+}

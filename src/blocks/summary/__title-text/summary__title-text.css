@@ -1,0 +1,40 @@
+.summary__title-text {
+    margin: 0 0 9px 0;
+    color: var(--text-black, #000);
+    font-family: Segoe UI;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.33333;
+    letter-spacing: -0.24px;
+}
+.summary__title-text-tiker {
+    font-size: 20px;
+}
+
+
+@media screen and (max-width: 1023px) {
+    .summary__title-text {
+        margin: 0 0 0.87890625vw 0;
+        font-size: 2.34375vw;
+        line-height: 1.2942708333;
+        letter-spacing: -0.0234375vw;
+    }
+
+    .summary__title-text-tiker {
+        font-size: 1.953125vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .summary__title-text {
+        margin: 0 0 2.5vw 0;
+        font-size: 6.25vw;
+        line-height: 1.4;
+        letter-spacing: -0.0625vw;
+    }
+
+    .summary__title-text-tiker {
+        font-size: 6.25vw;
+    }
+}

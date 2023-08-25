@@ -1,0 +1,19 @@
+.header__profile-button {
+    display: flex;
+    width: 56px;
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1023px) {
+    .header__profile-button {
+        width: 5.4688vw;
+        gap: 0.5859vw;
+    }
+}

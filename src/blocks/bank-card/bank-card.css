@@ -1,0 +1,23 @@
+.bank-card {
+    /* margin: 16px 0 0 0; */
+    display: flex;
+    align-items: center;
+}
+
+.bank-card_summary {
+    margin: 4px 0 0 0;
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 1023px) {
+    .bank-card_summary {
+        margin: 0.390625vw 0 0 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .bank-card_summary {
+        display: none;
+    }
+}

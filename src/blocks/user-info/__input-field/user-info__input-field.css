@@ -1,0 +1,36 @@
+.user-info__input-field {
+    width: 100%;
+    height: 27px;
+    border: none;
+    padding: 0;
+    border-bottom: 1px solid #00000033;
+    outline: none;
+}
+
+.user-info__input-field_error {
+    color: var(--system-orange, #F55123);
+    border-bottom: 1px solid var(--system-orange, #F55123);
+}
+.user-info__input-field::placeholder {
+    color: var(--system-gray, #9797AF);
+}
+
+@media screen and (max-width: 1023px) {
+    .user-info__input-field {
+        height: 2.63671875vw;
+        border-bottom: 0.09765625vw solid #00000033;
+    }
+    .user-info__input-field_error {
+        border-bottom: 0.09765625vw solid var(--system-orange, #F55123);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .user-info__input-field {
+        height: 8.4375vw;
+        border-bottom: 0.03125vw solid #00000033;
+    }
+    .user-info__input-field_error {
+        border-bottom: 0.03125vw solid var(--system-orange, #F55123);
+    }
+}

@@ -1,0 +1,17 @@
+.card__row-description-row {
+    display: flex;
+    gap: 8px;
+}
+
+@media screen and (max-width: 1023px) {
+    .card__row-description-row {
+        gap: 0.78125vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .card__row-description-row {
+        margin: 3.75vw 0 2.5vw 0;
+        gap: 2.5vw;
+    }
+}

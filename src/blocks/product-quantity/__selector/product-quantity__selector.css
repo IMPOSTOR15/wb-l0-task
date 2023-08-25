@@ -1,0 +1,25 @@
+.product-quantity__selector {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    background: var(--background-white, #FFF);
+    display: flex;
+    width: 100px;
+    height: 44px;
+}
+
+@media screen and (max-width: 1023px) {
+    .product-quantity__selector {
+        width: 9.7656vw;
+        height: 4.2969vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .product-quantity__selector {
+        width: 25vw;
+        height: 10vw;
+        border-radius: 2.5vw;
+    }
+}
+

@@ -1,0 +1,16 @@
+.product-discription__property-row {
+    display: flex;
+    gap: 16px;
+    margin: 4px 0 4px 0;
+}
+
+/* .product-discription__property-row_outofstock {
+    margin: 0;
+} */
+
+@media screen and (max-width: 1023px) {
+    .product-discription__property-row {
+        gap: 1.5625vw;
+        margin-bottom: 0.7813vw;
+    }
+}

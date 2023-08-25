@@ -1,0 +1,16 @@
+.delivery-point__rating {
+    color: var(--text-black, #000);
+    margin: 0 8px 0 4px;
+}
+
+@media screen and (max-width: 1023px) {
+    .delivery-point__rating {
+        margin: 0 0.7813vw 0 0.3906vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .delivery-point__rating {
+        margin: 0 2.5vw 0 1.25vw;
+    }
+}

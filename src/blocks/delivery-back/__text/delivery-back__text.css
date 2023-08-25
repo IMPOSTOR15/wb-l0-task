@@ -1,0 +1,61 @@
+.delivery-back__text {
+    margin: 0;
+    color: var(--text-black, #000);
+}
+
+.delivery-back__text_marked {
+    position: relative;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--system-green, #0CB477);
+    border-bottom: 1px dashed rgba(12, 180, 119, 0.20);
+    cursor: pointer;
+}
+
+.delivery-back__text_marked .tooltip {
+    width: 256px;
+    padding: 10px 14px 16px 14px;
+    transform: translateX(-41%);
+    top: 18px;
+}
+
+.delivery-back__text_marked .tooltip_summary {
+    transform: translateX(-61%);
+}
+
+.delivery-back__text_marked:hover .tooltip {
+    display: flex;
+}
+
+
+@media screen and (max-width: 1023px) {
+    .delivery-back__text_marked {
+        border-bottom: 0.0977vw dashed rgba(12, 180, 119, 0.20);
+    }
+
+    .delivery-back__text_marked .tooltip {
+        width: 24.90234375vw;
+        padding: 0.9765625vw 1.3671875vw 1.5625vw 1.3671875vw;
+        top: 1.7578125vw;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .delivery-back__text_marked {
+        border-bottom: 0.0625vw dashed rgba(12, 180, 119, 0.20);
+    }
+    .delivery-back__text_marked .tooltip {
+        width: 80vw;
+        padding: 3.125vw 4.375vw 5vw 4.375vw;
+        transform: translateX(-44%);
+        top: 5.625vw;
+    }
+    .delivery-back__text_marked .tooltip_summary {
+        transform: translateX(-42.5%);
+    }
+    
+}
+
+

@@ -1,0 +1,32 @@
+.user-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 24px;
+    margin-top: 18px;
+    width: 700px;
+}
+@media screen and (max-width: 1399px) { 
+    .user-info {
+        width: 590px;
+    }
+}
+@media screen and (max-width: 1023px) {
+    .user-info {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.9531vw 2.3438vw;
+        margin-top: 1.7578125vw;
+        width: 57.6171875vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .user-info {
+        margin-top: 4.0625vw;
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        gap: 27px;
+        /* gap: 14.0625vw; */
+    }
+}

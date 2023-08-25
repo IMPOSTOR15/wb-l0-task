@@ -1,0 +1,21 @@
+.delivery-point__rating-img {
+    width: 12px;
+    height: 12px;
+    padding: 2px 0;
+}
+
+@media screen and (max-width: 1023px) {
+    .delivery-point__rating-img {
+        width: 1.1719vw;
+        height: 1.1719vw;
+        padding: 0.1953vw 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .delivery-point__rating-img {
+        width: 12px;
+        height: 12px;
+        padding: 2px 0;
+    }
+}

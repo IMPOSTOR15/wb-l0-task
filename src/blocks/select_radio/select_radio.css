@@ -1,0 +1,33 @@
+.select-radio {
+    min-width: 20px;
+    height: 20px;
+    margin: 3px 0 0 0;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    background-image: url(../../../PUBLIC/icons/modal_icons/radio_disabled.svg);
+}
+
+.select-radio_active {
+    background-image: url(../../../PUBLIC/icons/modal_icons/radio_active.svg);
+}
+
+@media screen and (max-width: 1023px) {
+    .select-radio {
+        min-width: 1.9531vw;
+        height: 1.9531vw;
+        margin: 0.2929vw 0 0 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .select-radio {
+        min-width: 6.25vw;
+        height: 6.25vw;
+        margin: 0.9375vw 0 0 0;
+
+    }
+}

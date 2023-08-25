@@ -1,0 +1,9 @@
+.product-quantity__remains {
+    color: var(--dark-system-coral, #FF3B30);
+}
+
+@media screen and (max-width: 767px) {
+    .product-quantity__remains {
+        margin: 0 auto 0 5vw;
+    }
+}

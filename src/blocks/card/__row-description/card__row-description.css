@@ -1,0 +1,5 @@
+.card__row-description {
+    color: var(--text-black, #000);
+    margin: 0;
+
+}

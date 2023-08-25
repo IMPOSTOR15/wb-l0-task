@@ -1,0 +1,32 @@
+.modal__close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    background-image: url(../../../../PUBLIC/icons/modal_icons/close_btn.svg);
+}
+
+@media screen and (max-width: 1023px) {
+    .modal__close-btn {
+        top: 1.953125vw;
+        right: 1.953125vw;
+        width: 2.34375vw;
+        height: 2.34375vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .modal__close-btn {
+        top: 6.25vw;
+        right: 3.4375vw;
+        width: 7.5vw;
+        height: 7.5vw;
+    }
+}

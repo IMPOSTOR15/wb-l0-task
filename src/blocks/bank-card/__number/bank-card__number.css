@@ -1,0 +1,19 @@
+.bank-card__number {
+    color: var(--text-black, #000);
+    margin: 0 12px 0 8px;
+}
+
+
+
+@media screen and (max-width: 1023px) { 
+    .bank-card__number {
+        margin: 0 1.1719vw 0 0.7813vw;
+    }
+}
+
+@media screen and (max-width: 767px) { 
+    .bank-card__number {
+        font-size: 5vw;
+        margin: 0 3.75vw 0 2.5vw;
+    }
+}

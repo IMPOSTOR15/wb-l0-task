@@ -1,0 +1,423 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="root">
+        <header class="header">
+            <div class="header__menu">
+                <button class="header__menu-button"></button>
+                <h1 class="header__title">Товары и точка</h1>
+            </div>
+            <div class="search">
+                <input class="search__input" placeholder="Я ищу..." type="text">
+                <button class="search__button"></button>
+            </div>
+            <div class="header__menu-icons">
+                <button class="header__profile-button">
+                    <img class="header__profile-icon"  src="<%=require('../PUBLIC/icons/header_icons/profile.svg')%>" alt="Профиль">
+                    <span class="header__profile-text text_caption">Профиль</span>
+                </button>
+                <button class="header__cart-button">
+                    <img class="header__cart-icon" src="<%=require('../PUBLIC/icons/header_icons/cart.svg')%>" alt="Корзина">
+                    <span class="header__cart-text text_caption">Корзина</span>
+                    <span class="header__cart-counter" id="headerCartCounter">3</span>
+                </button>
+            </div>
+        </header>
+        <header class="header_mobile">
+            <button class="header__menu-button_mobile"></button>
+            <h1 class="header__title_mobile">Товары и точка</h1>
+            <button class="search__button_mobile"></button>
+        </header>
+        <main class="main">
+            <div class="cart">
+                <h2 class="cart__title text_header1">Корзина</h2>
+                <div class="cart__top-row" id="cart-top-row-instock-open">
+                    <button class="checkbox checkbox_active" id="selectAllbtn"></button>
+                    <p class="cart__top-text text__body">Выбрать все</p>
+                    <button class="arrow_top" id="goodsColapseBtn-instock-open"></button>
+                </div>
+                <div class="cart__top-row" id="cart-top-row-instock-close" style="display: none;">
+                    <p class="cart__top-text text__body_semibold" id="cartTopRowInfo"></p> 
+                    <button class="arrow_top" id="goodsColapseBtn-instock-close" style="rotate: 180deg;"></button>
+                </div>
+                <div class="cart__goods-column" id="InStockColumn">
+                    <template id="product-template-mobile">
+                        <div class="product-card_mobile">
+                            <div class="product-card__row">
+                                <div class="product-card__image">
+                                    <button class="checkbox checkbox_active product-card__checkbox_mobile"></button>
+                                    <div  class="product-card__size"></div>
+                                </div>
+                                <div class="product-card__info-column">
+                                    <div class="product-price">
+                                        <p class="product-price__actual-price text_header4"></p>
+                                        <button class="product-price__full-price text_caption">
+                                            <span class="text_caption" id="full-price"></span>
+                                            <div class="tooltip tooltip_price">
+                                                <div class="tooltip__row">
+                                                    <span class="text_caption">Скидка 55%</span>
+                                                    <span class="tooltip__text text_caption">−300 сом</span>
+                                                </div>
+                                                <div class="tooltip__row">
+                                                    <span class="text_caption">Скидка покупателя 10%</span>
+                                                    <span class="tooltip__text text_caption">−30 сом</span>
+                                                </div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <div class="product-discription">
+                                        <h4 class="product-discription__title text__body text__body-2"></h4>
+                                        <div class="text_caption" id="product-property"></div>
+                                        <p class="product-discription__storage text_caption"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-quantity">
+                                <div class="product-quantity__selector">
+                                    <span class="product-quantity__selector-minus">−</span>
+                                    <span class="product-quantity__selector-number">1</span>
+                                    <span class="product-quantity__selector-plus">+</span>
+                                </div>
+                                <span class="product-quantity__remains text_caption"></span>
+                                <div class="product-quantity__icons-row">
+                                    <button class="heart"></button>
+                                    <button class="delete"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                    <template id="product-template">
+                        <div class="product-card">
+                            <button class="checkbox checkbox_active product-card__checkbox"></button>
+                            <img class="product-card__photo" src="#" alt="#">
+                            <div class="product-discription">
+                                <h4 class="product-discription__title text__body"></h4>
+                                <div class="product-discription__property-row text_caption" id="product-property"></div>
+                                <p class="product-discription__storage text_caption"></p>
+                                <div class="product-discription__seller-row">
+                                    <p class="product-discription__seller-name text_caption"></p>
+                                    <button class="info-btn">
+                                        <div class="tooltip">
+                                            <span class="tooltip__title text_header5"></span>
+                                            <span class="tooltip__text text_caption" id="tooltipOGRN"></span>
+                                            <span class="tooltip__text text_caption" id="tooltipAdress"></span>
+                                        </div>
+                                    </button>
+
+                                </div>
+                            </div>
+                            <div class="product-quantity">
+                                <div class="product-quantity__selector">
+                                    <span class="product-quantity__selector-minus">−</span>
+                                    <span class="product-quantity__selector-number"></span>
+                                    <span class="product-quantity__selector-plus product-quantity__selector-plus_active">+</span>
+                                </div>
+                                <span class="product-quantity__remains text_caption"></span>
+                                <div class="product-quantity__icons-row">
+                                    <button class="heart"></button>
+                                    <button class="delete"></button>
+                                </div>
+                            </div>
+                            <div class="product-price">
+                                <p class="product-price__actual-price text_header3"><span class="product-price__tiker text_header4">сом</span></p>
+                                <button class="product-price__full-price text_caption">
+                                    <span id="full-price"></span>
+                                    <div class="tooltip tooltip_price">
+                                        <div class="tooltip__row">
+                                            <span class="tooltip__caption">Скидка 55%</span>
+                                            <span class="tooltip__text">−300 сом</span>
+                                        </div>
+                                        <div class="tooltip__row">
+                                            <span class="tooltip__caption">Скидка покупателя 10%</span>
+                                            <span class="tooltip__text">−30 сом</span>
+                                        </div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+                <div class="cart__top-row" id="cart-top-row-outOfStock-open">
+                    <p class="cart__top-text text__body_semibold" id="cartTopRowInfoOutOfStock-1"></p>
+                    <button class="arrow_top" id="goodsColapseBtn-outOfStock-open"></button>
+                </div>
+                <div class="cart__top-row" id="cart-top-row-outOfStock-close" style="display: none;">
+                    <p class="cart__top-text text__body_semibold" id="cartTopRowInfoOutOfStock-2"></p>
+                    <button class="arrow_top" id="goodsColapseBtn-outOfStock-close" style="rotate: 180deg;"></button>
+                </div>
+                <div class="cart__goods-column" id="outOfStockColumn">
+                    <template id="product-template-mobile-outofstock">
+                        <div class="product-card_mobile">
+                            <div class="product-card__row">
+                                <div class="product-card__image product-card__image_outofstock">
+                                    <div  class="product-card__size text__body-2"></div>
+                                </div>
+                                <div class="product-card__info-column">
+                                    <div class="product-discription">
+                                        <h4 class="product-discription__title product-discription__title_outofstok text__body-2"></h4>
+                                        <div id="product-property" class="text_caption"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-quantity product-quantity_outofstok">
+                                <div class="product-quantity__icons-row">
+                                    <button class="heart"></button>
+                                    <button class="delete"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                    <template id="product-template-outofstock">
+                        <div class="product-card">
+                            <img class="product-card__photo product-card__photo_outofstock" src="#" alt="фото товара">
+                            <div class="product-discription product-discription_outofstok">
+                                <h4 class="product-discription__title product-discription__title_outofstok text__body"></h4>
+                                <div class="product-discription__property-row product-discription__property-row_outofstock text_caption" id="product-property">                                </div>
+                            </div>
+                            <div class="product-quantity product-quantity_outofstok">
+                                <div class="product-quantity__icons-row">
+                                    <button class="heart"></button>
+                                    <button class="delete"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </template>                
+                </div>
+                <div class="card">
+                    <div class="card__top-row">
+                        <h2 class="card__title">Способ доставки</h2>
+                        <button class="card__edit-button text_header4" id="openDeliveryModalBtnFromDeliveryMethod">Изменить</button>
+                    </div>
+                    <div class="card__info-column">
+                        <p class="card__row-title text__body_semibold" id="deliveryTitleCard">Пункт выдачи</p>
+                        <div>
+                            <p class="card__row-description text__body" id="deliveryAdressCard"></p>
+                            <span class="delivery-point__info" id="deliveryPointInfoCard">
+                                <img class="delivery-point__rating-img" src="<%=require('../PUBLIC/icons/cart_icons/rating_star.svg')%>" alt="рейтинг">
+                                <span class="delivery-point__rating text_caption" id="deliveryPointRatingCard"></span>
+                                <span class="delivery-point__time text_caption"></span>
+                            </span>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="card__info-column">
+                        <p class="card__row-title text__body_semibold">Стоимость доставки</p>
+                        <p class="card__row-description text__body">Бесплатно</p>
+                    </div>
+                    <div class="card__info-column">
+                        <p class="card__row-title text__body_semibold">5—6 февраля</p>
+                        <div class="card__row-description-row">
+                            <div class="product-photo_1"></div>
+                            <div class="product-photo_2">
+                                <span class="product-photo__counter">184</span>
+                            </div>
+                            <div class="product-photo_3">
+                                <span class="product-photo__counter">2</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card__info-column">
+                        <p class="card__row-title text__body_semibold">7—8 февраля</p>
+                        <div class="card__row-description-row">
+                            <div class="product-photo_2">
+                                <span class="product-photo__counter">16</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="delivery-back">
+                        <img class="delivery-back__icon" src="<%=require('../PUBLIC/icons/cart_icons/price_shipping.svg')%>" alt="иконка доставки">
+                        <p class="delivery-back__text text_caption">
+                            Обратная доставка товаров на склад при отказе — 
+                            <button class="delivery-back__text_marked text_caption">
+                                бесплатно
+                                <div class="tooltip">
+                                    <span class="tooltip__text text_caption">Если товары вам не подойдут, мы вернем ихобратно на склад — это бесплатно</span>
+                                </div>
+                            </button>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__top-row">
+                        <h2 class="card__title">Способ оплаты</h2>
+                        <button class="card__edit-button text_header4" id="openPaymentModalBtnFromPayMethod">Изменить</button>
+                    </div>
+                    <div class="bank-card">
+                        <img class="bank-card__ico" src="<%=require('../PUBLIC/icons/cart_icons/mir.svg')%>" id="selectedCardIco" alt="платежная система">
+                        <p class="bank-card__number text__body" id="selectedCardNumber">1234 56•• •••• 1234</p>
+                        <p class="bank-card__date text__body" id="selectedCardDate">01/30</p>
+                    </div>
+                    <p class="bank-card__description text_caption">Спишем оплату с карты при получении</p>
+                </div>
+                <div class="card">
+                    <div class="card__top-row">
+                        <h2 class="card__title ">Получатель</h2>
+                    </div>
+                    <div class="user-info">
+                        <div class="user-info__input-container">
+                            <input id="first-name-input" class="user-info__input-field text__body" type="text" placeholder="Имя">
+                            <label class="user-info__input-label text_caption" for="first-name-input">Имя</label>
+                            <label class="user-info__input-label-error" id="first-name-error" for="first-name-input"></label>
+                        </div>
+                        <div class="user-info__input-container">
+                            <input id="surname-input" class="user-info__input-field text__body" type="text" placeholder="Фамилия">
+                            <label class="user-info__input-label text_caption" for="surname-input">Фамилия</label>
+                            <label class="user-info__input-label-error" id="surname-error" for="surname-input"></label>
+                        </div>
+                        <div class="user-info__input-container">
+                            <input id="email-input" class="user-info__input-field text__body" type="email" placeholder="Почта">
+                            <label class="user-info__input-label text_caption" for="email-input">Почта</label>
+                            <label class="user-info__input-label-error" id="email-error" for="email-input"></label>
+                        </div>
+                        <div class="user-info__input-container">
+                            <input id="phone-input" class="user-info__input-field text__body" type="tel" placeholder="Телефон">
+                            <label class="user-info__input-label text_caption" for="phone-input">Телефон</label>
+                            <label class="user-info__input-label-error" id="phone-error" for="phone-input"></label>
+                        </div>
+                        <div class="user-info__input-container">
+                            <input id="inn-input" class="user-info__input-field text__body" type="text" placeholder="ИНН">
+                            <label class="user-info__input-label text_caption" for="inn-input">ИНН</label>
+                            <span class="user-info__input-description" id="inn-description">Для таможенного оформления</span>
+                            <label class="user-info__input-label-error" id="inn-error" for="inn-input"></label>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="summary">
+                <div class="summary__row">
+                    <h2 class="summary__title-text">Итого</h2>
+                    <h2 class="summary__title-text" id="summaryFinalValue"></h2>
+                </div>
+                <div class="summary__row">
+                    <p class="summary__text text__body" id="summaryGoodsQuantity">203 товара</p>
+                    <p class="summary__text text__body" id="summaryFullValue"></p>
+                </div>
+                <div class="summary__row">
+                    <p class="summary__text text__body">Скидка</p>
+                    <p class="summary__text text__body" id="summaryDiscountValue"></p>
+                </div>
+                <div class="summary__row">
+                    <p class="summary__text text__body">Доставка</p>
+                    <p class="summary__text text__body">Бесплатно</p>
+                </div>
+                <div class="summary__row">
+                    <h4 class="summary__semi-title text_header4" id="deliveryTitleSummary">Доставка в пункт выдачи</h4>
+                    <button class="summary__edit-btn" id="openDeliveryModalBtnFromSummary"></button>
+                </div>
+                <p class="summary__description text_caption" id="summaryDeliveryAdress"></p>
+                <p class="summary__description_marked text_caption">5–8 фев</p>
+                <div class="summary__row_marked">
+                    <img class="delivery-back__icon" src="<%=require('../PUBLIC/icons/cart_icons/price_shipping.svg')%>" alt="иконка доставки">
+                    <p class="summary__small-text text_caption">Обратная доставка товаров на склад при отказе —
+                        <button class="delivery-back__text_marked text_caption">
+                            бесплатно
+                            <div class="tooltip tooltip_summary">
+                                <span class="tooltip__text text_caption">Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</span>
+                            </div>
+                        </button>
+                    </p>
+                </div>
+                <div class="summary__row">
+                    <h4 class="summary__semi-title text_header4">Оплата картой</h4>
+                    <button class="summary__edit-btn" id="openPaymentModalBtnFromSummary"></button>
+                </div>
+                <div class="bank-card_summary">
+                    <img class="bank-card__ico" id="summaryCardIcon" src="<%=require('../PUBLIC/icons/cart_icons/mir.svg')%>" alt="платежная система">
+                    <p class="bank-card__number text_caption" id="summaryCardNumber">1234 56•• •••• 1234</p>
+                </div>
+                <div class="summary__column_marked">
+                    <div class="paytype">
+                        <button class="checkbox" id="onlinePaymentBtn"></button>
+                        <p class="summary__small-text text_caption">Списать оплату сразу</p>
+                    </div>
+                    <p class="summary__small-text text_caption" id="onlinePaymentBtnDescription">Спишем оплату с карты при получении</p>
+                </div>
+                <button class="summary__order-btn text_header4" id="orderBtn">Заказать</button>
+                <div class="summary__row">
+                    <img class="summary__check-mark" src="<%=require('../PUBLIC/icons/cart_icons/checkmark.svg')%>" alt="согласие"></img>
+                    <p class="paytype__text text_caption">Соглашаюсь <span class="summary__small-text_bordered text_caption">с правилами пользования торговой площадкой</span> и <span class="summary__small-text_bordered">возврата</span></p>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <p class="footer__text">© 2022&nbsp&nbspООО «Товары и точка»</p>
+        </footer>
+        <div class="tab-bar">
+            <button class="tab-bar__button" style="background-image: url(<%=require('../PUBLIC/icons/tab-bar_icons/home.svg')%>)"></button>
+            <button class="tab-bar__button" style="background-image: url(<%=require('../PUBLIC/icons/tab-bar_icons/catalog.svg')%>)"></button>
+            <button class="tab-bar__button" style="background-image: url(<%=require('../PUBLIC/icons/tab-bar_icons/cart.svg')%>)">
+                <span class="tab-bar__counter" id="tabCartCounter">3</span>
+            </button>
+            <button class="tab-bar__button" style="background-image: url(<%=require('../PUBLIC/icons/tab-bar_icons/favorites.svg')%>)"></button>
+            <button class="tab-bar__button" style="background-image: url(<%=require('../PUBLIC/icons/tab-bar_icons/profile.svg')%>)"></button>
+        </div>
+    </div>
+    <div class="overlay" id="paymentModal-overlay"></div>
+
+    <div class="modal" id="modal">
+        <div class="modal__body payment-modal">
+            <button class="modal__close-btn" id="closePaymentModalBtn"></button>
+            <div class="modal__top-row">
+                <h3 class="modal__title text_header3">Способ оплаты</h3>
+            </div>
+            <div class="modal__card-row" id="bacnkCradRow">
+                <template id="backCardTemplate">
+                    <div class="bank-card">
+                        <button class="select-radio"></button>
+                        <img class="bank-card__ico" src="#" alt="платежная система">
+                        <p class="bank-card__number text__body"></p>
+                    </div>
+                </template>
+            </div>
+            <div class="modal__footer">
+                <button class="modal__main-btn text_header4" id="confirmPaymentCardbtn">Выбрать</button>
+            </div>
+        </div>
+        <div class="modal__body delivery-modal">
+            <button class="modal__close-btn" id="closeDeliveryModalBtn"></button>
+            <div class="modal__top-row">
+                <h3 class="modal__title">Способ доставки</h3>
+                <div class="delivery-type__row">
+                    <button class="delivery-type__btn" id="pointDeliveryBtn">В пункт выдачи</button>
+                    <button class="delivery-type__btn delivery-type__btn_active" id="courierDeliveryBtn">Курьером</button>
+                </div>
+            </div>
+            <p class="delivery-type__title">Мои адреса</p>
+            <div class="modal__card-row" id="courierDeliveryAdressesColumn">
+                <template id="courierDeliveryAdressesTemplate">
+                    <div class="delivery-type__item">
+                        <button class="select-radio"></button>
+                        <p class="delivery-type__adress text__body"></p>
+                        <button class="delete"></button>
+                    </div>
+                </template>
+            </div>
+            <div class="modal__card-row" id="pointDeliveryAdressesColumn" style="display: none;">
+                <template id="pointDeliveryAdressesTemplate">
+                    <div class="delivery-type__item">
+                        <button class="select-radio"></button>
+                        <div class="delivery-type__point-info-column">
+                            <p class="delivery-type__adress text__body"></p>
+                            <span class="delivery-point__info" id="deliveryPointInfoCard">
+                                <img class="delivery-point__rating-img" src="<%=require('../PUBLIC/icons/cart_icons/rating_star.svg')%>" alt="рейтинг">
+                                <span class="delivery-point__rating text_caption"></span>
+                                <span class="delivery-point__type-text text_caption">Пункт выдачи</span>
+                            </span>
+                        </div>
+                        <button class="delete"></button>
+                    </div>
+                </template>
+            </div>
+            <div class="modal__footer">
+                <button class="modal__main-btn" id="confirmDeliverybtn">Выбрать</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

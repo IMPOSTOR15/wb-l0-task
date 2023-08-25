@@ -1,0 +1,37 @@
+.search__input {
+    flex: 1 0 0;
+    background: transparent;
+    color: var(--system-white, #FFF);
+    font-family: Segoe UI;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.33333;
+    border: none;
+    padding: 0;
+}
+.search__input::placeholder {
+    color: var(--system-white, #FFF);
+    font-family: Segoe UI;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.33333;
+    opacity: 0.5;
+}
+.search__input:focus {
+    border: none;
+    outline: none;
+}
+
+@media screen and (max-width: 1023px) {
+    .search__input {
+        font-size: 1.7578125vw;
+        line-height: 1.2942708333;
+    }
+
+    .search__input::placeholder {
+        font-size: 1.7578125vw;
+        line-height: 1.2942708333;
+    }
+}

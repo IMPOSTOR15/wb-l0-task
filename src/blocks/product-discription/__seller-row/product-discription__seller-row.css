@@ -1,0 +1,13 @@
+.product-discription__seller-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 1px;
+}
+
+@media screen and (max-width: 1023px) {
+    .product-discription__seller-name {
+        font-size: 1.2695vw;
+        line-height: 1.1914;
+    }
+}

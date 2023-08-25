@@ -1,0 +1,26 @@
+.product-price__full-price {
+    position: relative;
+    margin: 0;
+    color: var(--system-gray, #9797AF);
+    white-space: nowrap;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    border-bottom: 1px dashed #9797AF;
+    cursor: pointer;
+
+}
+.product-price__full-price:hover .tooltip  {
+    display: flex;
+}
+@media screen and (max-width: 1023px) {
+    .product-price__full-price {
+        border-bottom-width: 0.0977vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .product-price__full-price {
+        border-bottom-width: 0.3125vw;
+    }
+}

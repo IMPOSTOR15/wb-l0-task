@@ -1,0 +1,28 @@
+.user-info__input-description {
+    position: absolute;
+    top: 28px;
+    padding-top: 4px;
+    color: var(--text-black, #000);
+    font-family: Segoe UI;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.16667;
+}
+
+@media screen and (max-width: 1023px) {
+    .user-info__input-description {
+        top: 2.7344vw;
+        padding-top: 0.390625vw;
+        font-size: 1.171875vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .user-info__input-description {
+        top: 8.75vw;
+        padding-top: 0.9375vw;
+        font-size: 3.75vw;
+    }
+}
+

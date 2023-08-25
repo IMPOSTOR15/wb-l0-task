@@ -1,0 +1,21 @@
+.paytype__text {
+    margin: 0;
+    color: var(--text-black, #000);
+    font-family: Segoe UI;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.23077;
+}
+
+@media screen and (max-width: 1023px) {
+    .paytype__text {
+        font-size: 1.2695vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .paytype__text {
+        font-size: 4.0625vw;
+    }
+}

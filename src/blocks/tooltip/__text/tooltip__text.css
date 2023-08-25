@@ -1,0 +1,4 @@
+.tooltip__text {
+    color: var(--light-system-text, #000);
+    text-align: left;
+}

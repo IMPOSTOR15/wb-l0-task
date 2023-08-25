@@ -1,0 +1,28 @@
+.user-info__input-label-error {
+    height: 14px;
+    /* display: none; */
+    /* position: absolute;
+    top: 25px; */
+    color: var(--system-orange, #F55123);
+    font-family: Segoe UI;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.16667;
+    margin: 4px 0 0 0;
+}
+
+@media screen and (max-width: 1023px) {
+    .user-info__input-label-error {
+        font-size: 1.1719vw;
+        margin: 0.3906vw 0 0 0;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .user-info__input-label-error {
+        font-size: 3.75vw;
+        margin: 1.25vw 0 0 0;
+    }
+}

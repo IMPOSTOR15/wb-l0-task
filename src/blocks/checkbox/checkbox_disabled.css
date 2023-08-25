@@ -1,0 +1,26 @@
+.checkbox_disabled {
+    width: 22px;
+    height: 22px;
+    border: 0;
+    padding: 0;
+    background-image: url(../../../PUBLIC/icons/cart_icons/checkbox_disabled.svg);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1023px) {
+    .checkbox_disabled {
+        width: 2.1484vw;
+        height: 2.1484vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .checkbox_disabled {
+        width: 6.875vw;
+        height: 6.875vw;
+    }
+}

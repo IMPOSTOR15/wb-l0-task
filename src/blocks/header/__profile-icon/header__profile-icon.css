@@ -1,0 +1,11 @@
+.header__profile-icon {
+    width: 28px;
+    height: 28px;
+}
+
+@media screen and (max-width: 1023px) {
+    .header__profile-icon {
+        width: 2.734375vw;
+        height: 2.734375vw;
+    }
+}

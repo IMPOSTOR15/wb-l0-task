@@ -1,0 +1,15 @@
+.tab-bar__counter {
+    position: absolute;
+    top: -1.5625vw;
+    right: -1.875vw;
+    border-radius: 5vw;
+    background: var(--system-orange, #F55123);
+    color: var(--system-white, #FFF);
+    text-align: center;
+    font-family: Segoe UI;
+    font-size: 3.125vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.6;
+    padding: 0 1.5625vw;
+}

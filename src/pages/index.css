@@ -1,0 +1,170 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/SegoeUI/fonts.css);
+@import url(../blocks/root/root.css);
+
+@import url(../UI/text/fonts.css);
+
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__menu/header__menu.css);
+@import url(../blocks/header/__title/header__title.css);
+@import url(../blocks/header/__menu-button/header__menu-button.css);
+@import url(../blocks/header/__menu-icons/header__menu-icons.css);
+@import url(../blocks/header/__cart-button/header__cart-button.css);
+@import url(../blocks/header/__cart-counter/header__cart-counter.css);
+@import url(../blocks/header/__cart-icon/header__cart-icon.css);
+@import url(../blocks/header/__cart-text/header__cart-text.css);
+@import url(../blocks/header/__profile-button/header__profile-button.css);
+@import url(../blocks/header/__profile-icon/header__profile-icon.css);
+@import url(../blocks/header/__profile-text/header__profile-text.css);
+
+@import url(../blocks/search/search.css);
+@import url(../blocks/search/__button/search__button.css);
+@import url(../blocks/search/__input/search__input.css);
+
+@import url(../blocks/main/main.css);
+@import url(../blocks/cart/__title/cart__title.css);
+
+@import url(../blocks/cart/cart.css);
+@import url(../blocks/cart/__top-row/cart__top-row.css);
+@import url(../blocks/cart/__top-text/cart__top-text.css);
+@import url(../blocks/cart/__goods-column/cart__goods-column.css);
+
+
+@import url(../blocks/heart/heart.css);
+@import url(../blocks/delete/delete.css);
+@import url(../blocks/arrow/arrow_top.css);
+@import url(../blocks//info-btn/info-btn.css);
+@import url(../blocks/checkbox/checkbox_active.css);
+@import url(../blocks/checkbox/checkbox_disabled.css);
+
+@import url(../blocks/product-card/__checkbox/product-card__checkbox.css);
+@import url(../blocks/product-card/__photo/product-card__photo.css);
+@import url(../blocks/product-card/product-card.css);
+@import url(../blocks/product-card/__row/product-card__row.css);
+@import url(../blocks/product-card/__image/product-card__image.css);
+@import url(../blocks/product-card/__size/product-card__size.css);
+
+@import url(../blocks/product-discription/__property-row/product-discription__property-row.css);
+@import url(../blocks/product-discription/__property-text/product-discription__property-text.css);
+@import url(../blocks/product-discription/__seller-name/product-discription__seller-name.css);
+@import url(../blocks/product-discription/__seller-row/product-discription__seller-row.css);
+@import url(../blocks/product-discription/__storage/product-discription__storage.css);
+@import url(../blocks/product-discription/__title/product-discription__title.css);
+@import url(../blocks/product-discription/product-discription.css);
+
+@import url(../blocks/product-price/__actual-price/product-price__actual-price.css);
+@import url(../blocks/product-price/__full-price/product-price__full-price.css);
+@import url(../blocks/product-price/__tiker/product-price__tiker.css);
+@import url(../blocks/product-price/product-price.css);
+
+@import url(../blocks/product-quantity/__icons-row/product-quantity__icons-row.css);
+@import url(../blocks/product-quantity/__remains/product-quantity__remains.css);
+@import url(../blocks/product-quantity/__selector-minus/product-quantity__selector-minus.css);
+@import url(../blocks/product-quantity/__selector-number/product-quantity__selector-number.css);
+@import url(../blocks/product-quantity/__selector-plus/product-quantity__selector-plus.css);
+@import url(../blocks/product-quantity/__selector/product-quantity__selector.css);
+@import url(../blocks/product-quantity/product-quantity.css);
+
+@import url(../blocks/card/card.css);
+@import url(../blocks/card/__info-column/card__info-column.css);
+@import url(../blocks/card/__top-row/card__top-row.css);
+@import url(../blocks/card/__title/card__title.css);
+@import url(../blocks/card/__edit-button/card__edit-button.css);
+@import url(../blocks/card/__info-row/card__info-row.css);
+@import url(../blocks/card/__row-title/card__row-title.css);
+@import url(../blocks/card/__row-description/card__row-description.css);
+@import url(../blocks/card/__row-description-row/card__row-description-row.css);
+@import url(../blocks/card/__description-text/card__description-text.css);
+
+@import url(../blocks/delivery-point/__info/delivery-point__info.css);
+@import url(../blocks/delivery-point/__name/delivery-point__name.css);
+@import url(../blocks/delivery-point/__rating/delivery-point__rating.css);
+@import url(../blocks/delivery-point/__rating-img/delivery-point__rating-img.css);
+@import url(../blocks/delivery-point/__time/delivery-point__time.css);
+@import url(../blocks/delivery-point/__type-text/delivery-point__type-text.css);
+@import url(../blocks/delivery-point/delivery-point.css);
+
+
+@import url(../blocks/delivery-back/__icon/delivery-back__icon.css);
+@import url(../blocks/delivery-back/__text/delivery-back__text.css);
+@import url(../blocks/delivery-back/delivery-back.css);
+
+@import url(../blocks/product-photo/product-photo.css);
+@import url(../blocks/product-photo/__counter/product-photo__counter.css);
+
+@import url(../blocks/bank-card/bank-card.css);
+@import url(../blocks/bank-card/__date/bank-card__date.css);
+@import url(../blocks/bank-card/__ico/bank-card__ico.css);
+@import url(../blocks/bank-card/__number/bank-card__number.css);
+@import url(../blocks/bank-card/__description/bank-card__description.css);
+
+@import url(../blocks/user-info/__input-container/user-info__input-container.css);
+@import url(../blocks/user-info/__input-field/user-info__input-field.css);
+@import url(../blocks/user-info/__input-label/user-info__input-label.css);
+@import url(../blocks/user-info/__input-description/user-info__input-description.css);
+@import url(../blocks/user-info/__input-label-error/user-info__input-label-error.css);
+@import url(../blocks/user-info/user-info.css);
+
+
+@import url(../blocks/summary/summary.css);
+@import url(../blocks/summary/__row/summary__row.css);
+@import url(../blocks/summary/__text/summary__text.css);
+@import url(../blocks/summary/__title-text/summary__title-text.css);
+@import url(../blocks/summary/__edit-btn/summary__edit-btn.css);
+@import url(../blocks/summary/__semi-title/summary__semi-title.css);
+@import url(../blocks/summary/__description/summary__description.css);
+@import url(../blocks/summary/__column_marked/summary__column_marked.css);
+@import url(../blocks/summary/__order-btn/summary__order-btn.css);
+@import url(../blocks/summary/__check-mark/summary__check-mark.css);
+@import url(../blocks/summary/__small-text/summary__small-text.css);
+
+@import url(../blocks/paytype/__text/paytype__text.css);
+@import url(../blocks/paytype/paytype.css);
+
+@import url(../blocks/footer/__text/footer__text.css);
+@import url(../blocks/footer/footer.css);
+
+@import url(../blocks/tab-bar/__button/tab-bar__button.css);
+@import url(../blocks/tab-bar/__counter/tab-bar__counter.css);
+@import url(../blocks/tab-bar/tab-bar.css);
+
+
+@import url(../blocks/modal/__close-btn/modal__close-btn.css);
+@import url(../blocks/modal/__title/modal__title.css);
+@import url(../blocks/modal/__top-row/modal__top-row.css);
+@import url(../blocks/modal/__body/modal__body.css);
+@import url(../blocks/modal/modal.css);
+@import url(../blocks/modal/__card-row/modal__card-row.css);
+@import url(../blocks/select_radio/select_radio.css);
+@import url(../blocks/modal/__footer/modal__footer.css);
+@import url(../blocks/modal/__main-btn/modal__main-btn.css);
+
+
+@import url(../blocks/delivery-type/__adress/delivery-type__adress.css);
+@import url(../blocks/delivery-type/__btn/delivery-type__btn.css);
+@import url(../blocks/delivery-type/__item/delivery-type__item.css);
+@import url(../blocks/delivery-type/__row/delivery-type__row.css);
+@import url(../blocks/delivery-type/__title/delivery-type__title.css);
+@import url(../blocks/delivery-type/__point-info-column/delivery-type__point-info-column.css);
+
+@import url(../blocks/tooltip/tooltip.css);
+@import url(../blocks/tooltip/__title/tooltip__title.css);
+@import url(../blocks/tooltip/__text/tooltip__text.css);
+@import url(../blocks/tooltip/__row/tooltip__row.css);
+
+
+@import url(../blocks/overlay/overlay.css);
+:root {
+    --system-white: #FFF;
+    --system-orange: #F55123;
+    --text-black: #000;
+    --system-magenta: #CB11AB;
+    --system-violet: #6725A8;
+    --system-gray: #9797AF;
+    --background-smoky: #F6F6FA;
+    --system-smoky-dark: #F0ECF4;
+}
+
+body {
+    background: var(--system-violet, #6725A8);
+}

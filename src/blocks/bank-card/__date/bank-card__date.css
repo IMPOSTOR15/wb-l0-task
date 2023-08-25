@@ -1,0 +1,4 @@
+.bank-card__date {
+    color: var(--text-black, #000);
+    margin: 0;
+}

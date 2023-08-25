@@ -1,0 +1,15 @@
+.delivery-type__item {
+    display: flex;
+    gap: 8px;
+}
+@media screen and (max-width: 1023px) {
+    .delivery-type__item {
+        gap: 0.7813vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .delivery-type__item  {
+        gap: 2vw;
+    }
+}

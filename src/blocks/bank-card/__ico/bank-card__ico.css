@@ -1,0 +1,23 @@
+.bank-card__ico {
+    width: 32px;
+    height: 24px;
+    background-color: transparent;
+    border-radius: 4px;
+    background: var(--background-smoky, #F6F6FA);
+}
+
+@media screen and (max-width: 1023px) {
+    .bank-card__ico {
+        width: 3.125vw;
+        height: 2.34375vw;
+        border-radius: 0.390625vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .bank-card__ico {
+        width: 10vw;
+        height: 7.5vw;
+        border-radius: 1.25vw;
+    }
+}

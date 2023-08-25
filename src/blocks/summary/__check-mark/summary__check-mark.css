@@ -1,0 +1,21 @@
+.summary__check-mark {
+    margin: 0 8px 0 0;
+    width: 13px;
+    height: 24px;
+}
+
+@media screen and (max-width: 1023px) {
+    .summary__check-mark {
+        margin: 0 0.78125vw 0 0;
+        width: 1.26953125vw;
+        height: 2.34375vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .summary__check-mark {
+        margin: 0 2.5vw 0 0;
+        width: 4.0625vw;
+        height: 7.5vw;
+    }
+}

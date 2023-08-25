@@ -1,0 +1,44 @@
+.product-photo__counter {
+    position: absolute;
+    top: -8px;
+    right: -4px;
+    border-radius: 8px;
+    background: var(--system-orange, #F55123);
+
+    min-width: 8px;
+    height: 16px;
+    padding: 0 4px;
+    color: var(--text-white, #FFF);
+    text-align: center;
+    font-family: Segoe UI;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.6
+}
+
+
+@media screen and (max-width: 1023px) {
+    .product-photo__counter {
+        top: -0.7813vw;
+        right: -0.3906vw;
+        border-radius: 0.7813vw;
+        min-width: 0.7813vw;
+        height: 1.5625vw;
+        padding: 0 0.3906vw;
+        font-size: 0.9766vw;
+        line-height: 1.5625;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .product-photo__counter {
+        top: -2.5vw;
+        right: -1vw;
+        border-radius: 2.5vw;
+        min-width: 2.5vw;
+        height: 5vw;
+        padding: 0 1.25vw;
+        font-size: 3.125vw;
+    }
+}

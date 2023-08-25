@@ -1,0 +1,29 @@
+.summary__order-btn {
+    height: 44px;
+    padding: 0px 32px 5px 32px;
+    border-radius: 8px;
+    background: var(--system-magenta, #CB11AB);
+    border: none;
+    margin: 24px 0 12px 0;
+    color: var(--system-white, #FFF);
+    text-align: center;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1023px) {
+    .summary__order-btn {
+        height: 4.296875vw;
+        padding: 0px 3.125vw 0.48828125vw 3.125vw;
+        border-radius: 0.78125vw;
+        margin: 2.34375vw 0 1.171875vw 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .summary__order-btn {
+        height: 13.75vw;
+        padding: 0 1vw 1.5625vw 1vw;
+        border-radius: 2.5vw;
+        margin: 7.5vw 0 3.75vw 0;
+    }
+}

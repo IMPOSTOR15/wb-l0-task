@@ -1,0 +1,17 @@
+.product-card__image {
+    position: relative;
+    width: 25vw;
+    height: 33.125vw;
+    border-radius: 2.5vw;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    padding-top: -1px;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.product-card__image_outofstock {
+    filter: grayscale(100%);
+}

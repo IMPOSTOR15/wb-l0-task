@@ -1,0 +1,21 @@
+.tooltip__title {
+    color: var(--light-system-text, #000);
+    font-family: Segoe UI;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.23077;
+
+    text-align: left;
+}
+
+@media screen and (max-width: 1023px) {
+    .tooltip__title {
+        font-size: 1.26953125vw;
+    }
+}
+@media screen and (max-width: 767px) {
+    .tooltip__title {
+        font-size: 4.0625vw;
+    }
+}
