@@ -15,11 +15,19 @@
     background-image: url(../../../PUBLIC/icons/modal_icons/radio_active.svg);
 }
 
+.select-radio_margin {
+    margin: 3px 8px 0 0;
+}
+
 @media screen and (max-width: 1023px) {
     .select-radio {
         min-width: 1.9531vw;
         height: 1.9531vw;
         margin: 0.2929vw 0 0 0;
+    }
+
+    .select-radio_margin {
+        margin: 0.2929vw 0.7813vw 0 0;
     }
 }
 
@@ -28,6 +36,9 @@
         min-width: 6.25vw;
         height: 6.25vw;
         margin: 0.9375vw 0 0 0;
+    }
 
+    .select-radio_margin {
+        margin: 0.9375vw 2.5vw 0 0;
     }
 }
