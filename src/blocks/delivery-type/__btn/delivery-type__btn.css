@@ -3,7 +3,7 @@
     border: 2px solid rgba(203, 17, 171, 0.15);
     background: var(--text-white, #FFF);
     min-width: 224px;
-    padding: 9px 0 11px 0;
+    padding: 8px 0 10px 0;
 
     color: var(--text-black, #000);
     font-family: Segoe UI;
@@ -11,6 +11,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: 1.23077;
+    cursor: pointer;
 }
 
 .delivery-type__btn_active {

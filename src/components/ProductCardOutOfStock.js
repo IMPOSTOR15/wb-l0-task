@@ -31,6 +31,8 @@ export default class ProductCardOutOfStock {
 
         this._cartTopRowInfoOutOfStock1 = document.querySelector('#cartTopRowInfoOutOfStock-1')
         this._cartTopRowInfoOutOfStock2 = document.querySelector('#cartTopRowInfoOutOfStock-2')
+
+        this._favoriteBtn = this._cardElement.querySelector('.heart')
     }
 
     _getTemplate(template_name) {
@@ -63,6 +65,11 @@ export default class ProductCardOutOfStock {
         this._updateCartTopRow()
     }
 
+    _toggleFavorit() {
+        this.currentGoodData.isFavorit = !this.currentGoodData.isFavorit;
+        this._favoriteBtn.classList.toggle('heart_active');
+    }
+
     _setEventListeners() {
         this._deleteBtn.addEventListener('click', () => {
             this._deleteCardData()
@@ -73,6 +80,10 @@ export default class ProductCardOutOfStock {
             this._deleteCardData()
             this._removeCard()
         });
+
+        this._favoriteBtn.addEventListener('click', () => {
+            this._toggleFavorit()
+        })
     };
 
     generateCard() {
@@ -108,6 +119,12 @@ export default class ProductCardOutOfStock {
                     descriptionContainerMobile.appendChild(paragraph);
                 }
             }
+        }
+
+        if (this.currentGoodData.isFavorit) {
+            this._favoriteBtn.classList.add('heart_active')
+        } else {
+            this._favoriteBtn.classList.remove('heart_active')
         }
 
         const elementDiv = this._cardElement.querySelector('.product-card');

@@ -6,6 +6,16 @@
     background: var(--background-smoky, #F6F6FA);
 }
 
+.bank-card__ico:nth-child(2) {
+    width: 24px;
+    height: 24px;
+    padding: 0 4px;
+    background-color: transparent;
+    border-radius: 4px;
+    background: var(--background-smoky, #F6F6FA);
+}
+
+
 @media screen and (max-width: 1023px) {
     .bank-card__ico {
         width: 3.125vw;

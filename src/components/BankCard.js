@@ -2,6 +2,7 @@ export default class BankCard {
     constructor(id, bankCardTemplateId, bankCardsData, bankCardsElements) {
         this._cardId = id;
         this._bankCardTemplate = this._getTemplate(bankCardTemplateId);
+        this.cardDiv = this._bankCardTemplate.querySelector('.bank-card');
         this.bankCardsData = bankCardsData;
         this.bankCardsElements = bankCardsElements;
 
@@ -55,7 +56,7 @@ export default class BankCard {
     }
 
     _setEventListeners() {
-        this._selectBtn.addEventListener('click', () => {
+        this.cardDiv.addEventListener('click', () => {
             this._selectBankCard();
         });
     }
@@ -64,8 +65,7 @@ export default class BankCard {
         this._bankCardIcon.src = this.currentBankCardData.paySystemIco;
         this._bankCardNumber.textContent = this.currentBankCardData.cardNumber;
 
-        const cardDiv = this._bankCardTemplate.querySelector('.bank-card');
-        cardDiv.setAttribute('id', `card-${this._cardId}`);
+        this.cardDiv.setAttribute('id', `card-${this._cardId}`);
 
         return this._bankCardTemplate;
     }

@@ -211,24 +211,26 @@
                     </div>
                     <div class="card__info-column">
                         <p class="card__row-title text__body_semibold">5—6 февраля</p>
-                        <div class="card__row-description-row">
-                            <div class="product-photo_1"></div>
-                            <div class="product-photo_2">
-                                <span class="product-photo__counter">184</span>
-                            </div>
-                            <div class="product-photo_3">
-                                <span class="product-photo__counter">2</span>
+                        <div class="card__row-description-row" id="fastDeliveryRow">
+                        </div>
+                    </div>
+                    <div id="goodsDeliveryColumn">
+                        <div class="card__info-column">
+                            <p class="card__row-title text__body_semibold">7—8 февраля</p>
+                            <div class="card__row-description-row" id="lateDeliveryRow">
                             </div>
                         </div>
                     </div>
-                    <div class="card__info-column">
-                        <p class="card__row-title text__body_semibold">7—8 февраля</p>
-                        <div class="card__row-description-row">
-                            <div class="product-photo_2">
-                                <span class="product-photo__counter">16</span>
-                            </div>
+                    <template id="cardInfoColumn">
+                        <div class="card__info-column">
+                            <p class="card__row-title text__body_semibold"></p>
                         </div>
-                    </div>
+                    </template>
+                    <template id="cardInfoColumnGood">
+                        <div class="product-photo product-photo_2">
+                            <span class="product-photo__counter"></span>
+                        </div>
+                    </template>
                     <div class="delivery-back">
                         <img class="delivery-back__icon" src="<%=require('../PUBLIC/icons/cart_icons/price_shipping.svg')%>" alt="иконка доставки">
                         <p class="delivery-back__text text_caption">
@@ -280,14 +282,13 @@
                             <label class="user-info__input-label-error" id="phone-error" for="phone-input"></label>
                         </div>
                         <div class="user-info__input-container">
-                            <input id="inn-input" class="user-info__input-field text__body" type="text" placeholder="ИНН">
+                            <input id="inn-input" class="user-info__input-field text__body" type="number" placeholder="ИНН">
                             <label class="user-info__input-label text_caption" for="inn-input">ИНН</label>
                             <span class="user-info__input-description" id="inn-description">Для таможенного оформления</span>
                             <label class="user-info__input-label-error" id="inn-error" for="inn-input"></label>
                         </div>
                     </div>
                 </div>
-                
             </div>
             <div class="summary">
                 <div class="summary__row">
@@ -366,7 +367,7 @@
             <div class="modal__top-row">
                 <h3 class="modal__title text_header3">Способ оплаты</h3>
             </div>
-            <div class="modal__card-row" id="bacnkCradRow">
+            <div class="modal__card-row modal__card-row_bank-cards" id="bacnkCradRow">
                 <template id="backCardTemplate">
                     <div class="bank-card">
                         <button class="select-radio select-radio_margin"></button>

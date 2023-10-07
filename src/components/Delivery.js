@@ -1,17 +1,18 @@
 export default class Delivery {
-    constructor(id, courierDeliveryTemplateId, pointDeliveryTemplateId, DeliveryData, deliveryElements) {
+    constructor(id, courierDeliveryTemplateId, pointDeliveryTemplateId, deliveryData, deliveryElements) {
         this.id = id;
         this.deliveryElements = deliveryElements;
-        this.DeliveryData = DeliveryData;
-
-        const { courierAdresses, pointAdresses } = DeliveryData;
+        this.deliveryData = deliveryData;
+        const { courierAdresses, pointAdresses } = deliveryData;
         this._currentDeliveryData = courierAdresses.find(obj => obj.id === id) || pointAdresses.find(obj => obj.id === id);
-
+        this.isSelected = this._currentDeliveryData.isSelected;
         this._courierTemplate = this._getTemplate(courierDeliveryTemplateId);
         this._pointDeliveryTemplate = this._getTemplate(pointDeliveryTemplateId);
 
         this.isCourier = this._currentDeliveryData.type === 'courier';
         this._currentTemplate = this.isCourier ? this._courierTemplate : this._pointDeliveryTemplate;
+
+        this._cardDiv = this._currentTemplate.querySelector('.delivery-type__item');
 
         this._selectBtnCourier = this._courierTemplate.querySelector('.select-radio');
         this._selectBtnPoint = this._pointDeliveryTemplate.querySelector('.select-radio');
@@ -39,17 +40,18 @@ export default class Delivery {
     }
 
     _setEventListeners() {
-        this._selectBtnCourier.addEventListener('click', () => this.selectAdress());
-        this._selectBtnPoint.addEventListener('click', () => this.selectAdress());
-        this._deleteBtn.addEventListener('click', () => this._deleteAdress());
+        this._cardDiv.addEventListener('click', () => this.selectAdress());
+        this._deleteBtn.addEventListener('click', (event) => {
+            event.stopPropagation()
+            this._deleteAdress()
+        });
     }
 
     selectAdress() {
-        const { courierAdresses, pointAdresses } = this.DeliveryData;
-        courierAdresses.concat(pointAdresses).forEach(adress => {
-            adress.isSelected = false;
+        this.deliveryElements.forEach(deliveryAdress => {
+            deliveryAdress.isSelected = false;
         });
-        this._currentDeliveryData.isSelected = true;
+        this.isSelected = true;
         this.deliveryElements.forEach(deliveryAdress => {
             deliveryAdress.updateSelect();
         });
@@ -76,9 +78,8 @@ export default class Delivery {
     }
 
     updateSelect() {
-        const isSelected = this._currentDeliveryData.isSelected;
-        this._selectBtnCourier.classList.toggle('select-radio_active', isSelected && this.isCourier);
-        this._selectBtnPoint.classList.toggle('select-radio_active', isSelected && !this.isCourier);
+        this._selectBtnCourier.classList.toggle('select-radio_active', this.isSelected && this.isCourier);
+        this._selectBtnPoint.classList.toggle('select-radio_active', this.isSelected && !this.isCourier);
         
     }
 
@@ -91,28 +92,19 @@ export default class Delivery {
             this._deliveryPointRating.textContent = this._currentDeliveryData.rating;
         }
 
-        if (this._currentDeliveryData.isSelected) {
+        if (this.isSelected) {
             const selectBtn = this._currentTemplate.querySelector('.select-radio');
             selectBtn.classList.add('select-radio_active');
         }
-        const cardDiv = this._currentTemplate.querySelector('.delivery-type__item');
-        cardDiv.setAttribute('id', `${this.isCourier ? 'courier' : 'point'}Adress-${this.id}`);
+        this._cardDiv.setAttribute('id', `${this.isCourier ? 'courier' : 'point'}Adress-${this.id}`);
         this._setEventListeners();
         return this._currentTemplate;
     }
 
-    _removeAdress() {
-        if (this._currentDeliveryData.isSelected) {
-            this.deliveryElements[0].selectAdress();
-        }
-        const parentElement = document.querySelector(`#${this._currentDeliveryData.type}DeliveryAdressesColumn`);
-        const currentElement = document.querySelector(`#${this._currentDeliveryData.type}Adress-${this.id}`);
-        
-        if (parentElement && currentElement) {
-            parentElement.removeChild(currentElement);
-        }
-    }
     _deleteAdress() {
+        if (this.deliveryElements.length <= 1) {
+            return
+        }
         const parentElementId = this.isCourier ? 'courierDeliveryAdressesColumn' : 'pointDeliveryAdressesColumn';
         const currentElementId = `${this._currentDeliveryData.type}Adress-${this.id}`;
 
@@ -124,12 +116,13 @@ export default class Delivery {
         }
         this.deliveryElements = this.deliveryElements.filter(adress => adress.id !== this.id);
         if (this.isCourier) {
-            this.DeliveryData.courierAdresses = this.DeliveryData.courierAdresses.filter(adress => adress.id !== this.id);
+            this.deliveryData.courierAdresses = this.deliveryData.courierAdresses.filter(adress => adress.id !== this.id);
         } else {
-            this.DeliveryData.pointAdresses = this.DeliveryData.pointAdresses.filter(adress => adress.id !== this.id);
+            this.deliveryData.pointAdresses = this.deliveryData.pointAdresses.filter(adress => adress.id !== this.id);
         }
 
-        if (this._currentDeliveryData.isSelected) {
+        if (this.isSelected) {
+            this.deliveryElements[0].isSelected = true;
             this.deliveryElements[0].selectAdress();
         }
     }

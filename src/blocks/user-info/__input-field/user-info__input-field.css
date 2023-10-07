@@ -6,7 +6,10 @@
     border-bottom: 1px solid #00000033;
     outline: none;
 }
-
+.user-info__input-field::-webkit-outer-spin-button,
+.user-info__input-field::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
 .user-info__input-field_error {
     color: var(--system-orange, #F55123);
     border-bottom: 1px solid var(--system-orange, #F55123);

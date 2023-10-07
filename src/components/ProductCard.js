@@ -1,15 +1,20 @@
 
 export default class ProductCard {
-    constructor(template, mobileTemplate, id, goodsData, Summary, checkAllSelect) {
+    constructor(template, mobileTemplate, cardInfoRowTemplate, cardInfoColumnGoodTemplate, id, goodsData, Summary, checkAllSelect) {
         this.Summary = Summary;
         this.checkAllSelect = checkAllSelect;
         this.id = id;
         this.goodsData = goodsData;
         this._template = template;
         this._mobileTemplate = mobileTemplate;
+        this._cardInfoRowTemplate = cardInfoRowTemplate;
+        this._cardInfoColumnGoodTemplate = cardInfoColumnGoodTemplate;
+
+        this._goodsDeliveryColumnWrapperElement = document.querySelector('#goodsDeliveryColumn')
+
         this._cardElement = this._getTemplate(this._template);
         this._mobileCardElement = this._getTemplate(this._mobileTemplate);
-
+        
         this._cardId = id;
 
         this.currentGoodData = goodsData.find(obj => obj.id === id)
@@ -27,7 +32,18 @@ export default class ProductCard {
         this.isSelected = this.currentGoodData.isSelected;
         this.inStock = this.currentGoodData.inStock;
 
-        
+        this.fastDeliveryRow = document.querySelector('#fastDeliveryRow')
+        this.lateDeliveryRow = document.querySelector('#lateDeliveryRow')
+
+        this._cardInfoColumnGoodFastElement = this._getTemplate(this._cardInfoColumnGoodTemplate)
+        this.deliveryGoodFastElement = this._cardInfoColumnGoodFastElement.querySelector('.product-photo')
+        this.deliveryGoodQuantityFast = this._cardInfoColumnGoodFastElement.querySelector('.product-photo__counter')
+
+        this._cardInfoColumnGoodLateElement = this._getTemplate(this._cardInfoColumnGoodTemplate)
+        this.deliveryGoodLateElement = this._cardInfoColumnGoodFastElement.querySelector('.product-photo')
+        this.deliveryGoodQuantityLate = this._cardInfoColumnGoodLateElement.querySelector('.product-photo__counter')
+
+
         this._image = this._cardElement.querySelector('.product-card__photo');
         this._title = this._cardElement.querySelector('.product-discription__title');
         this._propertyText = this._cardElement.querySelector('.product-discription__property-text');
@@ -41,6 +57,7 @@ export default class ProductCard {
         this._minusBtn = this._cardElement.querySelector('.product-quantity__selector-minus');
         this._plusBtn = this._cardElement.querySelector('.product-quantity__selector-plus');
         this._selectBtn = this._cardElement.querySelector('.product-card__checkbox');
+        this._favoriteBtn = this._cardElement.querySelector('.heart')
 
         this._imageMobile = this._mobileCardElement.querySelector('.product-card__image');
         this._titleMobile = this._mobileCardElement.querySelector('.product-discription__title');
@@ -72,10 +89,17 @@ export default class ProductCard {
         this.tikerSpan.classList.add('text_header4')
         this.tikerSpan.textContent = "сом";
         
+        this.cardElementInDelivery = {}
     }
     _getTemplate(template) {
         return document.querySelector(template).content.cloneNode(true);
     }
+
+    _toggleFavorit() {
+        this.currentGoodData.isFavorit = !this.currentGoodData.isFavorit;
+        this._favoriteBtn.classList.toggle('heart_active');
+    }
+    
     _removeCard() {
         const parentElement = document.querySelector('.cart__goods-column');
         const currentElement  = document.getElementById(this.id);
@@ -84,8 +108,11 @@ export default class ProductCard {
             parentElement.removeChild(currentElement);
             parentElement.removeChild(currentElementMobile);
         }
+        
+        this.currentGoodData.isSelected = false
         this.Summary.updatePrices()
         this._updateCartTopRow()
+        this._updateDeliveryRowVisible()
     }
 
     _deleteCardData() {
@@ -94,6 +121,7 @@ export default class ProductCard {
         this._removeCard()
         this.updateSelect()
     }
+
 
     _selectGood() {
         if (this.currentGoodData.isSelected) {
@@ -109,6 +137,7 @@ export default class ProductCard {
         this._updateCartTopRow()
         this.checkAllSelect()
         this._updateCartNumber()
+        this._updateDeliveryRowVisible()
     }
     _updateCartNumber() {
         const selectedGoodsNum = this.goodsData.reduce((sum, elem) => {
@@ -138,14 +167,26 @@ export default class ProductCard {
         this.Summary.updatePrices()
         this._updateCartTopRow()
         this._updateCartNumber()
+        this._updateDeliveryRowVisible()
     }
     _decreaseQuantity() {
         if (this.currentGoodData.quantity > 1) {
             this.currentGoodData.quantity -= 1;
             this._quantity.textContent = this.currentGoodData.quantity;
             this._quantityMobile.textContent = this.currentGoodData.quantity;
+
+            if (this.currentGoodData.quantity > this.currentGoodData.avalibleOnFastWarehouse) {
+                this.deliveryGoodQuantityFast.textContent = this.currentGoodData.avalibleOnFastWarehouse;
+                this.deliveryGoodQuantityLate.textContent = this.currentGoodData.quantity - this.currentGoodData.avalibleOnFastWarehouse;
+                this.deliveryGoodQuantityLate.parentElement.style.display = 'block';
+            } else {
+                this.deliveryGoodQuantityFast.textContent = this.currentGoodData.quantity;
+                this.deliveryGoodQuantityLate.parentElement.style.display = 'none';
+            }
+            this._updateDeliveryRowVisible()
             this._updatePrice()
             this._checkQuantity()
+           
         }
         this.Summary.updatePrices()
         this._updateCartTopRow()
@@ -156,6 +197,15 @@ export default class ProductCard {
             this.currentGoodData.quantity += 1;
             this._quantity.textContent = this.currentGoodData.quantity;
             this._quantityMobile.textContent = this.currentGoodData.quantity;
+            if (this.currentGoodData.quantity > this.currentGoodData.avalibleOnFastWarehouse) {
+                this.deliveryGoodQuantityFast.textContent = this.currentGoodData.avalibleOnFastWarehouse;
+                this.deliveryGoodQuantityLate.textContent = this.currentGoodData.quantity - this.currentGoodData.avalibleOnFastWarehouse;
+                this.deliveryGoodQuantityLate.parentElement.style.display = 'block';
+            } else {
+                this.deliveryGoodQuantityFast.textContent = this.currentGoodData.quantity;
+                this.deliveryGoodQuantityLate.parentElement.style.display = 'none';
+            }
+            this._updateDeliveryRowVisible()
             this._updatePrice()
             this._checkQuantity()
         }
@@ -184,7 +234,6 @@ export default class ProductCard {
         this._actualPrice.textContent = Math.floor(this.actualPrice * this.currentGoodData.quantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "\u202F");
         this._actualPrice.appendChild(this.tikerSpan.cloneNode(true));
         this._fullPrice.textContent =  Math.floor(this.fullPrice * this.currentGoodData.quantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "\u202F")  + ' сом'
-        console.log(Math.floor(this.actualPrice * this.currentGoodData.quantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "\u202F"));
         this._actualPriceMobile.textContent = Math.floor(this.actualPrice * this.currentGoodData.quantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "\u202F");
         this._actualPriceMobile.appendChild(this.tikerSpan.cloneNode(true));
         this._fullPriceMobile.textContent =  Math.floor(this.fullPrice * this.currentGoodData.quantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "\u202f")  + ' сом'
@@ -216,6 +265,61 @@ export default class ProductCard {
         this._minusBtnMobile.addEventListener('click', this._decreaseQuantity.bind(this));
         this._plusBtn.addEventListener('click', this._increaseQuantity.bind(this));
         this._plusBtnMobile.addEventListener('click', this._increaseQuantity.bind(this));
+        this._favoriteBtn.addEventListener('click', this._toggleFavorit.bind(this));
+    }
+
+    createCardInDeleryFast() {
+        this._cardInfoColumnGoodFastElement.querySelector('.product-photo').style.backgroundImage = `url(${this.imageSrc})`;
+        this._cardInfoColumnGoodFastElement.querySelector('.product-photo__counter').textContent = this.quantity
+
+        return this._cardInfoColumnGoodFastElement
+    }
+
+    createCardInDelerylate() {
+        this._cardInfoColumnGoodLateElement.querySelector('.product-photo').style.backgroundImage = `url(${this.imageSrc})`;
+        if (this.quantity <= this.currentGoodData .avalibleOnFastWarehouse) {
+            this._cardInfoColumnGoodLateElement.querySelector('.product-photo').style.display = 'none'
+        } else {
+            this.deliveryGoodQuantityFast.textContent = this.currentGoodData.avalibleOnFastWarehouse;
+            this.deliveryGoodQuantityLate.textContent = this.quantity - this.currentGoodData.avalibleOnFastWarehouse;
+        }
+        
+        
+        return this._cardInfoColumnGoodLateElement
+    }
+    _updateDeliveryRowVisible() {
+        const atLeastOneSelect= this.goodsData.some((item) => item.isSelected);
+
+        const atLeastOneInLate = this.goodsData.some((item) => {
+            return item.isSelected && (item.quantity > item.avalibleOnFastWarehouse);
+        });
+
+        if (!this.currentGoodData.isSelected) {
+            if (this.deliveryGoodLateElement) {
+                this.deliveryGoodLateElement.style.display = 'none';
+            }
+            if (this.deliveryGoodFastElement) {
+                this.deliveryGoodFastElement.style.display = 'none';
+            }
+        } else {
+            if (this.deliveryGoodLateElement && this.currentGoodData.quantity > this.currentGoodData.avalibleOnFastWarehouse) {
+                this.deliveryGoodLateElement.style.display = 'block';
+            }
+            if (this.deliveryGoodFastElement) {
+                this.deliveryGoodFastElement.style.display = 'block';
+            }
+        }
+
+        if (atLeastOneSelect && atLeastOneInLate) {
+            this.fastDeliveryRow.parentElement.style.display = 'flex';
+            this.lateDeliveryRow.parentElement.style.display = 'flex';
+        } else if (!atLeastOneSelect) {
+            this.fastDeliveryRow.parentElement.style.display = 'none';
+            this.lateDeliveryRow.parentElement.style.display = 'none';
+        } else {
+            this.fastDeliveryRow.parentElement.style.display = 'flex';
+            this.lateDeliveryRow.parentElement.style.display = 'none';
+        }
     }
 
     generateCard() {
@@ -267,6 +371,7 @@ export default class ProductCard {
         } else {
             this._quantityRemains.style.display = 'none'
         }
+        
         this._checkQuantity()
         this._updatePrice()
         this._updateCartTopRow()
@@ -282,13 +387,24 @@ export default class ProductCard {
             this._actualPriceMobile.classList.add('text_header4')  
         }
 
+        if (this.currentGoodData.isFavorit) {
+            this._favoriteBtn.classList.add('heart_active')
+        } else {
+            this._favoriteBtn.classList.remove('heart_active')
+        }
+        
         const elementDiv = this._cardElement.querySelector('.product-card');
         const elementDivMobile = this._mobileCardElement.querySelector('.product-card_mobile');
 
         elementDiv.setAttribute('id', this._cardId);
         elementDivMobile.setAttribute('id', this._cardId + 'mobile');
-        
+
+        this.fastDeliveryRow.appendChild(this.createCardInDeleryFast())
+        this.lateDeliveryRow.appendChild(this.createCardInDelerylate())
+
         this._setEventListeners();
+
+        
         return [this._cardElement, this._mobileCardElement]
     }
 }

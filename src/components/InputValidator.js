@@ -16,18 +16,17 @@ export default class InputValidator {
       
 
       this.inputs.push(inputInfo);
-      inputElement.addEventListener("input", () => {
+      inputElement.addEventListener("input", (e) => {
+        if (inputElement.type === 'tel') {
+            this.enablePhoneMask(e);
+        }
         this.handleInput(inputInfo);
+        
       });
 
       inputElement.addEventListener("blur", () => {
         this.handleBlur(inputInfo);
       });
-      if (inputElement.type === 'tel') {
-        inputElement.addEventListener("blur", (e) => {
-            this.enablePhoneMask(e);
-          });
-      }
     }
 
     enablePhoneMask(evt) {
@@ -88,7 +87,10 @@ export default class InputValidator {
         return !nameRegex.test(value);
     }
     validatePhone(phone) {
+        
         const phoneRegex = /^\+\d\s\d{3}\s\d{3}\s\d{2}\s\d{2}$/;
+        console.log(phone);
+        console.log(phoneRegex.test(phone));
         return phoneRegex.test(phone);
     }
     validateEmail(email) {

@@ -1,11 +1,19 @@
 .modal__card-row {
     display: flex;
     flex-direction: column;
+    gap: 20px;
+}
+
+.modal__card-row_bank-cards {
     gap: 16px;
 }
+
 @media screen and (max-width: 1023px) {
     .modal__card-row {
-        gap: 1.5625vw;
+        gap: 1.955vw;
+    }
+    .modal__card-row_bank-cards {
+        gap: 1.564vw;
     }
 }
 @media screen and (max-width: 767px) {

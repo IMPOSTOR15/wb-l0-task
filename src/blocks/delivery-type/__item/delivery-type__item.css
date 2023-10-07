@@ -1,10 +1,20 @@
 .delivery-type__item {
     display: flex;
     gap: 8px;
+    cursor: pointer;
 }
+
+.delivery-type__item .delete {
+    margin-top: 4px;
+}
+
 @media screen and (max-width: 1023px) {
     .delivery-type__item {
         gap: 0.7813vw;
+    }
+
+    .delivery-type__item .delete {
+        margin-top: 0.39vw;
     }
 }
 
