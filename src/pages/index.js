@@ -11,9 +11,6 @@ import InputValidator from '../components/InputValidator';
 
 import {goodsData, paymentData, deliveryAdressData} from '../data/consts'
 
-
-
-
 const paymentModalData = {
     modal: '.payment-modal',
     openBtns: ['openPaymentModalBtnFromSummary', 'openPaymentModalBtnFromPayMethod'],
